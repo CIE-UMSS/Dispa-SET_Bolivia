@@ -9,7 +9,7 @@ Ray Antonio Rojas Candia1, Joseph Adhemar Araoz Ramos1, Sergio Luis Balderrama S
 3 Electrical Electronic and Communication Engineering, Public University of Navarre, Campus of Arrosadía – 31006, Pamplona, Spain
 
 
-Material and models adopted within the study published submitted to the International Journal of Sustainable Energy Planning and Management
+Material and models adopted within the study submitted to the International Journal of Sustainable Energy Planning and Management
 
 All material available in the present repository is licensed according to the “European Union Public Licence" EUPL v1.1. It can be redistributed and/or modified under the terms of this license. Citation of the source is requested; please cite the corresponding publication as: R. Rojas et al:  Modeling and techno-economic assessment of high variable renewable energy penetration in the Bolivian  power system, IJSEPM(2019)
 
