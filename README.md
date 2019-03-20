@@ -18,7 +18,7 @@ This is input data of the Dispa-SET model, applied to the Bolivian Electrical In
 
 | Year | VRES capacity share | PV (MW) |  Wind (MW)  |  Total (MW) |
 | :--: | :-----------------: | :-----: | :---------: | :---------: |
-| 2016 |                     |         |             |             |
+| 2016 |         1.5%        |    0    |      27     |     1855    |
 | 2021 |                     |         |             |             |
 | 2021 |                     |         |             |             |
 | 2021 |                     |         |             |             |
