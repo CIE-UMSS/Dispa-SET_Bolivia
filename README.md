@@ -15,6 +15,7 @@ All material available in the present repository is licensed according to the â€
 
 ### Description
 This is input data of the Dispa-SET model, applied to the Bolivian Electrical Interconnected System which has been divided into four zones (North, Central, Oriental and South) and was analized under different VRES (Variable Renewable Energy Sources) penetration levels at 2021. Scenarios are detailed in the following table:
+
 | Year | 
 | :--: | 
 | 2016 |    
