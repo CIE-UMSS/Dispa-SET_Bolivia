@@ -14,5 +14,10 @@ Material and models adopted within the study submitted to the International Jour
 All material available in the present repository is licensed according to the “European Union Public Licence" EUPL v1.1. It can be redistributed and/or modified under the terms of this license. Citation of the source is requested; please cite the corresponding publication as: R. Rojas et al:  Modeling and techno-economic assessment of high variable renewable energy penetration in the Bolivian  power system, IJSEPM(2019)
 
 ### Description
-This is input data of the Dispa-SET model, applied to the Bolivian Electrical Interconnected System
+This is input data of the Dispa-SET model, applied to the Bolivian Electrical Interconnected System which has been divided into four zones (North, Central, Oriental and South) and was analized under different VRES (Variable Renewable Energy Sources) penetration levels at 2021. Scenarios are detailed in the following table:
+| Year | 
+| :--: | 
+| 2016 |    
+| 2021 |  
+
 
