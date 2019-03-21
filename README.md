@@ -66,3 +66,14 @@ conda env create  # Automatically creates environment based on environment.yml
 source activate dispaset # in Windows: activate dispaset
 pip install -e . # Install editable local version
 ```
+The above commands create a dedicated environment so that your anconda configuration remains clean from the required dependencies installed.
+To check that everything runs fine, you can build and run a test case by typing:
+```bash
+dispaset -c ConfigFiles/ConfigTest.xlsx build simulate
+```
+
+- Make sure that the path is changed to local Dispa-SET folder in folowing scripts (the procedure is provided in the scripts)
+```bash
+  - build_and_run.py
+  - read_results.py
+```
