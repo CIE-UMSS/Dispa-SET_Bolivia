@@ -54,3 +54,7 @@ The model is expressed as an optimization problem. Continuous variables include 
 - CHP power plants and thermal storage
 
 The demand is assumed to be inelastic to the price signal. The MILP objective function is therefore the total generation cost over the optimization period.
+
+### Quick start
+
+If you want to download the latest version from github for use or development purposes, make sure that you have git and the [anaconda distribution, Python 2.7 version](https://www.anaconda.com/distribution/#download-section) installed and type the following:
