@@ -91,3 +91,9 @@ All material available in the present repository is licensed according to the �
 ![DispatchingSouth](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/DispachingSouthZone.png)
 
 ### Main developpers     
+- Ray Rojas (San Simón University) - gathered and analysed the data, performed the computations, analysed and verified the results
+- Sylvain Quoilin (University of Liège) -  designed the model and the computational framework, verified the results 
+
+### Other contributors
+- Sergio Balderrama (San Simón University) - analysed the results
+- Adhemar Araoz (San Simón University) - supervised project 
