@@ -90,4 +90,4 @@ All material available in the present repository is licensed according to the â€
 ![DispatchingOriental](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/DispachingOrientalZone.png)
 ![DispatchingSouth](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/DispachingSouthZone.png)
 
-      
+### Main developpers     
