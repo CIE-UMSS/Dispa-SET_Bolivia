@@ -84,5 +84,10 @@ All material available in the present repository is licensed according to the â€
 ### Important results
 
 ![Capacities](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/Capacity.png)
-  
+![Generation](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/Generation.png) 
+![DispatchingCentral](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/DispachingCentralZone.png)
+![DispatchingNorth](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/DispachingNorthZone.png)
+![DispatchingOriental](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/DispachingOrientalZone.png)
+![DispatchingSouth](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/DispachingSouthZone.png)
+
       
