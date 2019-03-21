@@ -35,3 +35,22 @@ This is input data of the Dispa-SET model, applied to the Bolivian Electrical In
 |2021|        584     | 15%               |         584      |  15%                |    3895           |
 |2021|        909     | 20%               |         909      |  20%                |    4546           |
 |2021|        1364    | 25%               |         1364     |  25%                |    5455           |
+
+### Features
+The model is expressed as an optimization problem. Continuous variables include the individual unit dispatched power, the shedded load and the curtailed power generation. The binary variables are the commitment status of each unit. The main model features can be summarized as follows:
+
+- Minimum and maximum power for each unit
+- Power plant ramping limits
+- Reserves up and down
+- Minimum up/down times
+- Load Shedding
+- Curtailment
+- Pumped-hydro storage
+- Non-dispatchable units (e.g. wind turbines, run-of-river, etc.)
+- Start-up, ramping and no-load costs
+- Multi-nodes with capacity constraints on the lines (congestion)
+- Constraints on the targets for renewables and/or CO2 emissions
+- Yearly schedules for the outages (forced and planned) of each units
+- CHP power plants and thermal storage
+
+The demand is assumed to be inelastic to the price signal. The MILP objective function is therefore the total generation cost over the optimization period.
