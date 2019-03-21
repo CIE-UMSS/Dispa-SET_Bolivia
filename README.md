@@ -58,3 +58,11 @@ The demand is assumed to be inelastic to the price signal. The MILP objective fu
 ### Quick start
 
 If you want to download the latest version from github for use or development purposes, make sure that you have git and the [anaconda distribution, Python 2.7 version](https://www.anaconda.com/distribution/#download-section) installed and type the following:
+
+```bash
+git clone https://github.com/energy-modelling-toolkit/Dispa-SET.git
+cd Dispa-SET
+conda env create  # Automatically creates environment based on environment.yml
+source activate dispaset # in Windows: activate dispaset
+pip install -e . # Install editable local version
+```
