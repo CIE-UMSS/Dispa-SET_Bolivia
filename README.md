@@ -11,8 +11,6 @@ Ray Antonio Rojas Candia1, Joseph Adhemar Araoz Ramos1, Sergio Luis Balderrama S
 
 Material and models adopted within the study submitted to the International Journal of Sustainable Energy Planning and Management
 
-All material available in the present repository is licensed according to the “European Union Public Licence" EUPL v1.1. It can be redistributed and/or modified under the terms of this license. Citation of the source is requested; please cite the corresponding publication as: R. Rojas et al:  Modeling and techno-economic assessment of high variable renewable energy penetration in the Bolivian  power system, IJSEPM(2019)
-
 ### Description
 This is input data of the Dispa-SET model, applied to the Bolivian Electrical Interconnected System which has been divided into four zones (North, Central, Oriental and South) and was analized under different VRES (Variable Renewable Energy Sources) penetration levels at 2021. Scenarios are detailed in the following table:
 
@@ -57,7 +55,7 @@ The demand is assumed to be inelastic to the price signal. The MILP objective fu
 
 ### Quick start
 
-If you want to download the latest version from github for use or development purposes, make sure that you have git and the [anaconda distribution](https://www.anaconda.com/distribution/#download-section)Python 2.7 version installed and type the following:
+If you want to download the latest version from github for use or development purposes, make sure that you have git and the [anaconda distribution](https://www.anaconda.com/distribution/#download-section) Python 2.7 version installed and type the following:
 
 ```bash
 git clone https://github.com/energy-modelling-toolkit/Dispa-SET.git
@@ -77,3 +75,8 @@ dispaset -c ConfigFiles/ConfigTest.xlsx build simulate
   - build_and_run.py
   - read_results.py
 ```
+### Documentation
+The general documentation of the Dispa-SET model and the stable releases are available on the main Dispa-SET website: http://www.dispaset.
+
+### Licence
+All material available in the present repository is licensed according to the “European Union Public Licence" EUPL v1.1. It can be redistributed and/or modified under the terms of this license. Citation of the source is requested; please cite the corresponding publication as: R. Rojas et al:  Modeling and techno-economic assessment of high variable renewable energy penetration in the Bolivian power system, IJSEPM(2019)
