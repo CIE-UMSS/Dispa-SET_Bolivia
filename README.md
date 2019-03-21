@@ -83,6 +83,6 @@ All material available in the present repository is licensed according to the â€
 
 ### Important results
 
-
+![Capacities](https://github.com/CIE-UMSS/Dispa-SET_Bolivia/blob/master/Images/Capacity.png)
   
       
