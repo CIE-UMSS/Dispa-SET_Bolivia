@@ -19,7 +19,7 @@ This is input data of the Dispa-SET model, applied to the Bolivian Electrical In
 | Year | PV, (MW / Percentage share) | Wind, (MW / Percentage share) | Total (MW) |
 | :--: | :-------------------------: | :---------------------------: | :--------: |
 | 2016 |            0 / 0%           |             27 / 1.5%         |    1855    |
-| 2021 |          174 / 5%           |            165 / 5%           |    3066    |
+| 2021 |         174 / 5%            |           165 / 5%            |    3066    |
 | 2021 |                           |         |             |             |
 | 2021 |                           |         |             |             |
 | 2021 |                           |         |             |             |
