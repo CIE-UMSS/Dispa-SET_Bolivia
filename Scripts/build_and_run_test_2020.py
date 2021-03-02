@@ -14,7 +14,7 @@ sys.path.append(os.path.abspath('../../Dispa-SET'))
 import dispaset as ds
 
 # Load the configuration file
-config = ds.load_config('../../ConfigFiles/ConfigBO_2025.xlsx')
+config = ds.load_config('../ConfigFiles/ConfigBO_test_2020.xlsx')
 
 # Build the simulation environment:
 SimData = ds.build_simulation(config)
