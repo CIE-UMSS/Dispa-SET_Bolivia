@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+#SBATCH --mail-user=manavia@uliege.be
+#SBATCH --mail-type=BEGIN,END
+#SBATCH --job-name=DISPASET_BOLIVIA_S5_DC
+#SBATCH --time=1-23:00:00 # days-hh:mm:ss
+#SBATCH --output=DISPASET_BOLIVIA_S5_DC_MILP.txt
+#
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem-per-cpu=10000 # megabytes
+#SBATCH --partition=batch
+
+# Path for GAMS
+export PATH=$PATH:/home/users/m/a/manavia/gams24.4_linux_x64_64_sfx/
+
+# Run the script
+cd /home/ulg/thermlab/manavia/.local/programs/Dispa-SET/tests/dummy_data/5.14ENERGY/Scripts/
+
+echo "Bolivia_S5_DC.py in $PWD"
+
+# srun python3 
+python3 "Bolivia_S5_DC.py" > "DISPASET_BOLIVIA_S5_DC_MILP.log" 2>&1
+echo "END OF JOB"

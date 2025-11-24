@@ -1,0 +1,144 @@
+Description: Bolivia configuration file for testing purposes. Four zones (CE, OR,
+  NO, SU) are simulated. There is Inertia, FFR, FCR, aFRR and mFRR
+SimulationType: No clustering
+SimulationDirectory: Simulations/BOLIVIA_2030_S0
+StartDate: !!python/tuple
+- 2030
+- 1
+- 1
+- 0
+- 0
+- 0
+StopDate: !!python/tuple
+- 2030
+- 12
+- 31
+- 23
+- 0
+- 0
+DataTimeStep: 1
+SimulationTimeStep: 1
+HorizonLength: 2
+LookAhead: 1
+AllowCurtailment: 1
+GAMS_folder: ''
+Demand: Demand/Demand_2030.csv
+RenewablesAF: RenewablesAF/RenewablesAF_2030_S0.csv
+Outages: Outages/Outages_2030_S0.csv
+ShareOfFlexibleDemand: ''
+DemandFlexibility: ''
+LoadShedding: ''
+PowerPlantData: PowerPlantData/PowerPlantData_2030_S0.csv
+NTC: NTC/NTC_2030.csv
+Interconnections: ''
+TransmissionGridType: DC-Power Flow
+GridData: GridData/GridData_2030.csv
+GeoData: GeoCoordinates_2030.csv
+HydroScheduling: Regional
+HydroSchedulingHorizon: Annual
+InitialFinalReservoirLevel: 0
+ReservoirLevels: ''
+ReservoirLevelInitial: ''
+ReservoirLevelFinal: ''
+ReservoirScaledInflows: ScaledInflows/ScaledInflows_2030.csv
+StorageAlertLevels: ''
+StorageFloodControl: ''
+WaterValue: ''
+CostLoadShedding: ''
+CostCurtailment: ''
+CostOfSpillage: ''
+CostXNotServed: ''
+ValueOfLostLoad: ''
+PriceTransmission: ''
+PriceOfGas: ''
+PriceOfBlackCoal: ''
+PriceOfLignite: ''
+PriceOfCO2: ''
+PriceOfBiomass: ''
+PriceOfFuelOil: ''
+PriceOfNuclear: ''
+PriceOfPeat: ''
+PriceOfAmmonia: ''
+ReserveCalculation: Generic
+ShareOfQuickStartUnits: ''
+aFRRUDemand: ''
+aFRRDDemand: ''
+FCRDemand: ''
+SystemInertiaDemand: ''
+FFRDemand: ''
+FrequencyStability: ''
+BoundarySectorData: ''
+BoundarySectorNTC: ''
+BoundarySectorInterconnections: ''
+SectorXDemand: ''
+SectorXFlexibleDemand: ''
+SectorXFlexibleSupply: ''
+SectorXReservoirLevels: ''
+SectorXFloodControl: ''
+BoundarySectorMaxSpillage: ''
+OptimalityGap: 0.15
+modifiers:
+  Demand: 1
+  Solar: 1
+  Wind: 1
+  Storage: 1
+zones:
+- CE
+- OR
+- 'NO'
+- SU
+mts_zones:
+- CE
+- OR
+- 'NO'
+- SU
+all_zones:
+- CE
+- OR
+- 'NO'
+- SU
+ReserveParticipation:
+- COMC
+- GTUR
+- HDAM
+- HPHS
+- ICEN
+- CAES
+- BATS
+- BEVS
+- P2HT
+- ABHP
+- ASHP
+- GSHP
+- HYHP
+- WSHP
+- REHE
+- STUR
+ReserveParticipation_CHP: []
+default:
+  ShareOfFlexibleDemand: 0.03
+  DemandFlexibility: 4
+  LoadShedding: 0.05
+  ReservoirLevelInitial: 0.5
+  ReservoirLevelFinal: 0.5
+  WaterValue: 1500
+  CostLoadShedding: 3000
+  CostCurtailment: 0
+  CostOfSpillage: 0
+  ValueOfLostLoad: 100000
+  PriceTransmission: 0
+  PriceOfGas: 12.48
+  PriceOfBlackCoal: 0
+  PriceOfLignite: 0
+  PriceOfCO2: 0
+  PriceOfBiomass: 10.32
+  PriceOfFuelOil: 111.41
+  PriceOfNuclear: 0
+  PriceOfPeat: 0
+  PriceOfAmmonia: 0
+  ShareOfQuickStartUnits: 0.5
+  FCRDemand: ''
+  SystemInertiaDemand: ''
+  FFRDemand: ''
+Reserve2D: ''
+Reserve2U: ''

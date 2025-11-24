@@ -1,0 +1,498 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Apr 21 11:35:42 2023
+
+@author: navia
+"""
+
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+
+#%% Load data
+df0 = pd.read_csv('SCENARIO_0.csv')
+df1 = pd.read_csv('SCENARIO_1.csv')
+df2 = pd.read_csv('SCENARIO_2.csv')
+df3 = pd.read_csv('SCENARIO_3.csv')
+df4 = pd.read_csv('SCENARIO_4.csv')
+df5 = pd.read_csv('SCENARIO_5.csv')
+
+df0['TIMESTAMP']=df0['TIMESTAMP'].astype('datetime64[s]')
+df0.set_index('TIMESTAMP',inplace=True, drop=True)
+df0['Year']=df0.index.year
+df0['Month']=df0.index.month
+df0['Day']=df0.index.day
+df0['Hour']=df0.index.hour
+df0['Week']=df0.index.week
+
+df1['TIMESTAMP']=df1['TIMESTAMP'].astype('datetime64[s]')
+df1.set_index('TIMESTAMP',inplace=True, drop=True)
+df1['Year']=df1.index.year
+df1['Month']=df1.index.month
+df1['Day']=df1.index.day
+df1['Hour']=df1.index.hour
+df1['Week']=df1.index.week
+
+df2['TIMESTAMP']=df2['TIMESTAMP'].astype('datetime64[s]')
+df2.set_index('TIMESTAMP',inplace=True, drop=True)
+df2['Year']=df2.index.year
+df2['Month']=df2.index.month
+df2['Day']=df2.index.day
+df2['Hour']=df2.index.hour
+df2['Week']=df2.index.week
+
+df3['TIMESTAMP']=df3['TIMESTAMP'].astype('datetime64[s]')
+df3.set_index('TIMESTAMP',inplace=True, drop=True)
+df3['Year']=df3.index.year
+df3['Month']=df3.index.month
+df3['Day']=df3.index.day
+df3['Hour']=df3.index.hour
+df3['Week']=df3.index.week
+
+df4['TIMESTAMP']=df4['TIMESTAMP'].astype('datetime64[s]')
+df4.set_index('TIMESTAMP',inplace=True, drop=True)
+df4['Year']=df4.index.year
+df4['Month']=df4.index.month
+df4['Day']=df4.index.day
+df4['Hour']=df4.index.hour
+df4['Week']=df4.index.week
+
+df5['TIMESTAMP']=df5['TIMESTAMP'].astype('datetime64[s]')
+df5.set_index('TIMESTAMP',inplace=True, drop=True)
+df5['Year']=df5.index.year
+df5['Month']=df5.index.month
+df5['Day']=df5.index.day
+df5['Hour']=df5.index.hour
+df5['Week']=df5.index.week
+df5['Date']=df5.index.date
+
+#%% 1. System Inertia between with and without inertia
+#Plotting Penetration level histogram with seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df0, y='Inertia_S0', x = 'TIMESTAMP' , linewidth=1, color='black',alpha=0.2,label='Inertia_S0',n_boot=100)
+sns.lineplot(data = df0, y='Inertia_M0', x = 'TIMESTAMP' , linewidth=1, color='teal',alpha=1,label='Inertia_M0',n_boot=100)
+sns.lineplot(data = df0, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df1, y='Inertia_S1', x = 'TIMESTAMP' , linewidth=1, color='black',alpha=0.2,label='Inertia_S1',n_boot=100)
+sns.lineplot(data = df1, y='Inertia_M1', x = 'TIMESTAMP' , linewidth=1, color='darkslategrey',alpha=1,label='Inertia_M1',n_boot=100)
+sns.lineplot(data = df1, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df2, y='Inertia_S2', x = 'TIMESTAMP' , linewidth=1, color='black',alpha=0.2,label='Inertia_S2',n_boot=100)
+sns.lineplot(data = df2, y='Inertia_M2', x = 'TIMESTAMP' , linewidth=1, color='navy',alpha=1,label='Inertia_M2',n_boot=100)
+sns.lineplot(data = df2, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df3, y='Inertia_S3', x = 'TIMESTAMP' , linewidth=1, color='black',alpha=0.2,label='Inertia_S3',n_boot=100)
+sns.lineplot(data = df3, y='Inertia_M3', x = 'TIMESTAMP' , linewidth=1, color='seagreen',alpha=1,label='Inertia_M3',n_boot=100)
+sns.lineplot(data = df3, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df4, y='Inertia_S4', x = 'TIMESTAMP' , linewidth=1, color='black',alpha=0.2,label='Inertia_S4',n_boot=100)
+sns.lineplot(data = df4, y='Inertia_M4', x = 'TIMESTAMP' , linewidth=1, color='darkkhaki',alpha=1,label='Inertia_S4',n_boot=100)
+sns.lineplot(data = df4, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df5, y='Inertia_S5', x = 'TIMESTAMP' , linewidth=1, color='black',alpha=0.2,label='Inertia_S5',n_boot=100)
+sns.lineplot(data = df5, y='Inertia_M5', x = 'TIMESTAMP' , linewidth=1, color='plum',alpha=1,label='Inertia_M5',n_boot=100)
+sns.lineplot(data = df5, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+#%% 2. Penetration level between scenarios (ALL THE SCENARIOS IN ONE PLOT)
+#Plotting Penetration level histogram with seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df0, y='PL_SG0', x = 'Week' , linewidth=1, color='teal',alpha=1,label='Penetration_Level_S0')
+sns.lineplot(data = df1, y='PL_SG1', x = 'Week' , linewidth=1, color='darkslategrey',alpha=1,label='Penetration_Level_S1')
+sns.lineplot(data = df2, y='PL_SG2', x = 'Week' , linewidth=1, color='navy',alpha=1,label='Penetration_Level_S2')
+sns.lineplot(data = df3, y='PL_SG3', x = 'Week' , linewidth=1, color='seagreen',alpha=1,label='Penetration_Level_S3')
+sns.lineplot(data = df4, y='PL_SG4', x = 'Week' , linewidth=1, color='darkkhaki',alpha=1,label='Penetration_Level_S4')
+sns.lineplot(data = df5, y='PL_SG5', x = 'Week' , linewidth=1, color='plum',alpha=1,label='Penetration_Level_S5')      
+sns.lineplot(data = df0, y='PL_MG0', x = 'Week' , linewidth=1, color='teal',alpha=1,label='Penetration_Level_M0')
+sns.lineplot(data = df1, y='PL_MG1', x = 'Week' , linewidth=1, color='darkslategrey',alpha=1,label='Penetration_Level_M1')
+sns.lineplot(data = df2, y='PL_MG2', x = 'Week' , linewidth=1, color='navy',alpha=1,label='Penetration_Level_M2')
+sns.lineplot(data = df3, y='PL_MG3', x = 'Week' , linewidth=1, color='seagreen',alpha=1,label='Penetration_Level_M3')
+sns.lineplot(data = df4, y='PL_MG4', x = 'Week' , linewidth=1, color='darkkhaki',alpha=1,label='Penetration_Level_M4')
+sns.lineplot(data = df5, y='PL_MG5', x = 'Week' , linewidth=1, color='plum',alpha=1,label='Penetration_Level_M5')      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Penetration Level[pu]', fontsize = 12)
+plt.show()
+
+
+#%% 3. Penetration level inertia constraint (DIFFERENT PLOTS FOR EACH SCENARIO)
+#Plotting Penetration level histogram with seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df0, y='PL_SG0', x = 'Week' , linewidth=1, color='black',alpha=1,label='Penetration_Level_S0')
+sns.lineplot(data = df0, y='PL_MG0', x = 'Week' , linewidth=1, color='teal',alpha=1,label='Penetration_Level_M0')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Penetration Level[pu]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df1, y='PL_SG1', x = 'Week' , linewidth=1, color='black',alpha=1,label='Penetration_Level_S1')
+sns.lineplot(data = df1, y='PL_MG1', x = 'Week' , linewidth=1, color='darkslategrey',alpha=1,label='Penetration_Level_M1')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Penetration Level[pu]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df2, y='PL_SG2', x = 'Week' , linewidth=1, color='black',alpha=1,label='Penetration_Level_S2')
+sns.lineplot(data = df2, y='PL_MG2', x = 'Week' , linewidth=1, color='navy',alpha=1,label='Penetration_Level_M2')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Penetration Level[pu]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df3, y='PL_SG3', x = 'Week' , linewidth=1, color='black',alpha=1,label='Penetration_Level_S3')
+sns.lineplot(data = df3, y='PL_MG3', x = 'Week' , linewidth=1, color='seagreen',alpha=1,label='Penetration_Level_M3')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Penetration Level[pu]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df4, y='PL_SG4', x = 'Week' , linewidth=1, color='black',alpha=1,label='Penetration_Level_S4')
+sns.lineplot(data = df4, y='PL_MG4', x = 'Week' , linewidth=1, color='darkkhaki',alpha=1,label='Penetration_Level_M4')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Penetration Level[pu]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df5, y='PL_SG5', x = 'Week' , linewidth=1, color='black',alpha=1,label='Penetration_Level_S5')      
+sns.lineplot(data = df5, y='PL_MG5', x = 'Week' , linewidth=1, color='plum',alpha=1,label='Penetration_Level_M5')      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Penetration Level[pu]', fontsize = 12)
+plt.show()
+
+#%% 4. Curtailment between scenarios (ALL THE SCENARIOS IN ONE PLOT)
+#Plotting Penetration level histogram with seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df0, y='Curtailment_S0', x = 'Week' , linewidth=1, color='teal',alpha=1,label='Curtailment_S0')
+sns.lineplot(data = df1, y='Curtailment_S1', x = 'Week' , linewidth=1, color='darkslategrey',alpha=1,label='Curtailment_S1')
+sns.lineplot(data = df2, y='Curtailment_S2', x = 'Week' , linewidth=1, color='navy',alpha=1,label='Curtailment_S2')
+sns.lineplot(data = df3, y='Curtailment_S3', x = 'Week' , linewidth=1, color='seagreen',alpha=1,label='Curtailment_S3')
+sns.lineplot(data = df4, y='Curtailment_S4', x = 'Week' , linewidth=1, color='darkkhaki',alpha=1,label='Curtailment_S4')
+sns.lineplot(data = df5, y='Curtailment_S5', x = 'Week' , linewidth=1, color='plum',alpha=1,label='Curtailment_S5')      
+sns.lineplot(data = df0, y='Curtailment_M0', x = 'Week' , linewidth=1, color='teal',alpha=1,label='Curtailment_M0')
+sns.lineplot(data = df1, y='Curtailment_M1', x = 'Week' , linewidth=1, color='darkslategrey',alpha=1,label='Curtailment_M1')
+sns.lineplot(data = df2, y='Curtailment_M2', x = 'Week' , linewidth=1, color='navy',alpha=1,label='Curtailment_M2')
+sns.lineplot(data = df3, y='Curtailment_M3', x = 'Week' , linewidth=1, color='seagreen',alpha=1,label='Curtailment_M3')
+sns.lineplot(data = df4, y='Curtailment_M4', x = 'Week' , linewidth=1, color='darkkhaki',alpha=1,label='Curtailment_M4')
+sns.lineplot(data = df5, y='Curtailment_M5', x = 'Week' , linewidth=1, color='plum',alpha=1,label='Curtailment_M5')      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Curtailment[MWh]', fontsize = 12)
+plt.show()
+
+#%% 3. Penetration level inertia constraint (DIFFERENT PLOTS FOR EACH SCENARIO)
+#Plotting Penetration level histogram with seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df0, y='Curtailment_S0', x = 'Week' , linewidth=1, color='black',alpha=1,label='Curtailment_S0')
+sns.lineplot(data = df0, y='Curtailment_M0', x = 'Week' , linewidth=1, color='teal',alpha=1,label='Curtailment_M0')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Curtailment[MWh]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df1, y='Curtailment_S1', x = 'Week' , linewidth=1, color='black',alpha=1,label='Curtailment_S1')
+sns.lineplot(data = df1, y='Curtailment_M1', x = 'Week' , linewidth=1, color='darkslategrey',alpha=1,label='Curtailment_M1')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Curtailment[MWh]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df2, y='Curtailment_S2', x = 'Week' , linewidth=1, color='black',alpha=1,label='Curtailment_S2')
+sns.lineplot(data = df2, y='Curtailment_M2', x = 'Week' , linewidth=1, color='navy',alpha=1,label='Curtailment_M2')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Curtailment[MWh]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df3, y='Curtailment_S3', x = 'Week' , linewidth=1, color='black',alpha=1,label='Curtailment_S3')
+sns.lineplot(data = df3, y='Curtailment_M3', x = 'Week' , linewidth=1, color='seagreen',alpha=1,label='Curtailment_M3')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Curtailment[MWh]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df4, y='Curtailment_S4', x = 'Week' , linewidth=1, color='black',alpha=1,label='Curtailment_S4')
+sns.lineplot(data = df4, y='Curtailment_M4', x = 'Week' , linewidth=1, color='darkkhaki',alpha=1,label='Curtailment_M4')
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Curtailment[MWh]', fontsize = 12)
+plt.show()
+
+fig, ax = plt.subplots(figsize=(15,7))
+sns.lineplot(data = df5, y='Curtailment_S5', x = 'Week' , linewidth=1, color='black',alpha=1,label='Curtailment_S5')      
+sns.lineplot(data = df5, y='Curtailment_M5', x = 'Week' , linewidth=1, color='plum',alpha=1,label='Curtailment_M5')      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('Week', fontsize = 12)
+plt.ylabel('Curtailment[MWh]', fontsize = 12)
+plt.show()
+
+#%% 4. System Inertia between with and without inertia
+#Plotting Penetration level histogram with seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df0, y='Inertia_S0', x = 'TIMESTAMP' , linewidth=1, color='teal',alpha=0.2,label='Inertia_S0',n_boot=100)
+sns.lineplot(data = df0, y='Inertia_M0', x = 'TIMESTAMP' , linewidth=1, color='teal',alpha=1,label='Inertia_M0',n_boot=100)
+sns.lineplot(data = df1, y='Inertia_S1', x = 'TIMESTAMP' , linewidth=1, color='darkslategrey',alpha=0.2,label='Inertia_S1',n_boot=100)
+sns.lineplot(data = df1, y='Inertia_M1', x = 'TIMESTAMP' , linewidth=1, color='darkslategrey',alpha=1,label='Inertia_M1',n_boot=100)
+sns.lineplot(data = df2, y='Inertia_S2', x = 'TIMESTAMP' , linewidth=1, color='navy',alpha=0.2,label='Inertia_S2',n_boot=100)
+sns.lineplot(data = df2, y='Inertia_M2', x = 'TIMESTAMP' , linewidth=1, color='navy',alpha=1,label='Inertia_M2',n_boot=100)
+sns.lineplot(data = df3, y='Inertia_S3', x = 'TIMESTAMP' , linewidth=1, color='seagreen',alpha=0.2,label='Inertia_S3',n_boot=100)
+sns.lineplot(data = df3, y='Inertia_M3', x = 'TIMESTAMP' , linewidth=1, color='seagreen',alpha=1,label='Inertia_M3',n_boot=100)
+sns.lineplot(data = df4, y='Inertia_S4', x = 'TIMESTAMP' , linewidth=1, color='darkkhaki',alpha=0.2,label='Inertia_S4',n_boot=100)
+sns.lineplot(data = df4, y='Inertia_M4', x = 'TIMESTAMP' , linewidth=1, color='darkkhaki',alpha=1,label='Inertia_S4',n_boot=100)
+sns.lineplot(data = df5, y='Inertia_S5', x = 'TIMESTAMP' , linewidth=1, color='plum',alpha=0.2,label='Inertia_S5',n_boot=100)
+sns.lineplot(data = df5, y='Inertia_M5', x = 'TIMESTAMP' , linewidth=1, color='plum',alpha=1,label='Inertia_M5',n_boot=100)
+sns.lineplot(data = df0, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+#%% 5. System Inertia between with and without inertia
+#Plotting Penetration level histogram with seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df0, y='Inertia_S0', x = 'TIMESTAMP' , linewidth=1, color='teal',alpha=1,label='Inertia_S0',n_boot=100)
+sns.lineplot(data = df1, y='Inertia_S1', x = 'TIMESTAMP' , linewidth=1, color='darkslategrey',alpha=0.2,label='Inertia_S1',n_boot=100)
+sns.lineplot(data = df2, y='Inertia_S2', x = 'TIMESTAMP' , linewidth=1, color='navy',alpha=1,label='Inertia_S2',n_boot=100)
+sns.lineplot(data = df3, y='Inertia_S3', x = 'TIMESTAMP' , linewidth=1, color='seagreen',alpha=1,label='Inertia_S3',n_boot=100)
+sns.lineplot(data = df4, y='Inertia_S4', x = 'TIMESTAMP' , linewidth=1, color='darkkhaki',alpha=1,label='Inertia_S4',n_boot=100)
+sns.lineplot(data = df5, y='Inertia_S5', x = 'TIMESTAMP' , linewidth=1, color='plum',alpha=1,label='Inertia_S5',n_boot=100)
+sns.lineplot(data = df0, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+#%% 6. System Inertia between with and without inertia
+#Plotting Penetration level histogram with seaborn
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+
+plt.figure(figsize=(15,7))
+sns.lineplot(data = df0, y='Inertia_M0', x = 'TIMESTAMP' , linewidth=1, color='teal',alpha=1,label='Inertia_M0',n_boot=100)
+sns.lineplot(data = df1, y='Inertia_M1', x = 'TIMESTAMP' , linewidth=1, color='darkslategrey',alpha=1,label='Inertia_M1',n_boot=100)
+sns.lineplot(data = df2, y='Inertia_M2', x = 'TIMESTAMP' , linewidth=1, color='navy',alpha=1,label='Inertia_M2',n_boot=100)
+sns.lineplot(data = df3, y='Inertia_M3', x = 'TIMESTAMP' , linewidth=1, color='seagreen',alpha=1,label='Inertia_M3',n_boot=100)
+sns.lineplot(data = df4, y='Inertia_M4', x = 'TIMESTAMP' , linewidth=1, color='darkkhaki',alpha=1,label='Inertia_S4',n_boot=100)
+sns.lineplot(data = df5, y='Inertia_M5', x = 'TIMESTAMP' , linewidth=1, color='plum',alpha=1,label='Inertia_M5',n_boot=100)
+sns.lineplot(data = df0, y='Mlimit', x = 'TIMESTAMP' , linewidth=1, color='red',alpha=1,label='Inertia_Limit',n_boot=100)      
+plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 12)
+plt.xticks(fontsize = 10)
+plt.yticks(fontsize = 10)
+plt.xlabel('TIMESTAMP', fontsize = 12)
+plt.ylabel('Inertia[s]', fontsize = 12)
+plt.show()
+
+
+#%% 7. Distribucion acumulada
+############################################   
+import pandas as pd
+import numpy as np
+from matplotlib import pyplot as plt
+
+plt.style.use('default')
+print(plt.style.available)
+%matplotlib inline
+
+#No. of data points used
+N = 8761
+
+df = pd.read_csv('INERTIA.csv',index_col=(0))
+plt.figure(figsize=(32, 8), dpi=150, edgecolor='yellow')
+
+#sort data in ascending order
+Inertia_S0 = np.sort(df['Inertia_S0'])
+Inertia_S1 = np.sort(df['Inertia_S1'])
+Inertia_S2 = np.sort(df['Inertia_S2'])
+Inertia_S3 = np.sort(df['Inertia_S3'])
+Inertia_S4 = np.sort(df['Inertia_S4'])
+Inertia_S5 = np.sort(df['Inertia_S5'])
+
+Inertia_M0 = np.sort(df['Inertia_M0'])
+Inertia_M1 = np.sort(df['Inertia_M1'])
+Inertia_M2 = np.sort(df['Inertia_M2'])
+Inertia_M3 = np.sort(df['Inertia_M3'])
+Inertia_M4 = np.sort(df['Inertia_M4'])
+Inertia_M5 = np.sort(df['Inertia_M5'])
+
+Mlimit = np.sort(df['Mlimit'])
+
+# get the cdf values of y
+y = np.arange(N) / float(N)
+
+# adding title to the plot
+# plt.title('Cumulative Distribution of System Inertia', fontsize = 30)  
+
+# plotting
+plt.xticks(fontsize = 20)
+plt.yticks(fontsize = 20)
+plt.xlabel('Inertia(H)[s]', fontsize = 25)
+plt.ylabel('Distribution', fontsize = 25)
+  
+  
+plt.plot(Inertia_S0, y, marker='o', alpha=0.1, color='teal')
+plt.plot(Inertia_S1, y, marker='o', alpha=0.1, color='darkslategrey')
+plt.plot(Inertia_S2, y, marker='o', alpha=0.1, color='navy')
+plt.plot(Inertia_S3, y, marker='o', alpha=0.1, color='seagreen')
+plt.plot(Inertia_S4, y, marker='o', alpha=0.1, color='darkkhaki')
+plt.plot(Inertia_S5, y, marker='o', alpha=0.1, color='plum')
+
+plt.plot(Inertia_M0, y, marker='x', alpha=0.1, color='teal')
+plt.plot(Inertia_M1, y, marker='x', alpha=0.1, color='darkslategrey')
+plt.plot(Inertia_M2, y, marker='x', alpha=0.1, color='navy')
+plt.plot(Inertia_M3, y, marker='x', alpha=0.1, color='seagreen')
+plt.plot(Inertia_M4, y, marker='x', alpha=0.1, color='darkkhaki')
+plt.plot(Inertia_M5, y, marker='x', alpha=0.1, color='plum')
+
+plt.plot(Mlimit, y, marker='o', alpha=1, color='red')
+# adding legend to the curve
+plt.legend([
+            'Inertia_S0',
+            'Inertia_S1',
+            'Inertia_S2',
+            'Inertia_S3',
+            'Inertia_S4',
+            'Inertia_S5',
+            'Inertia_M0',
+            'Inertia_M1',
+            'Inertia_M2',
+            'Inertia_M3',
+            'Inertia_M4',
+            'Inertia_M5', 
+            'Mlimit'
+            ], bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.,fontsize = 25)
+

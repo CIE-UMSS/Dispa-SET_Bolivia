@@ -1,0 +1,5 @@
+﻿Code_Line,Line,Code_Node_i,Node_i,Code_Node_j,Node_j,X,Fmax,HM
+NO -> CE,1,NO,3,CE,1,0.159,597.6,0
+OR -> CE,2,OR,2,CE,1,0.016,1023,0
+CE -> SU,3,CE,1,SU,4,0.202,444.5,0
+NO -> OR,4,NO,3,OR,2,0.691,140.04,0

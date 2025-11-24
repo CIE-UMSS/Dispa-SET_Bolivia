@@ -1,0 +1,49 @@
+technology,year,parameter,value,unit,source
+onwind,2030,lifetime,30,years,DEA https://ens.dk/en/our-services/projections-and-models/technology-data
+offwind,2030,lifetime,30,years,DEA https://ens.dk/en/our-services/projections-and-models/technology-data
+solar,2030,lifetime,25,years,IEA2010
+solar-rooftop,2030,lifetime,25,years,IEA2010
+solar-utility,2030,lifetime,25,years,IEA2010
+PHS,2030,lifetime,80,years,IEA2010
+hydro,2030,lifetime,80,years,IEA2010
+ror,2030,lifetime,80,years,IEA2010
+OCGT,2030,lifetime,30,years,IEA2010
+nuclear,2030,lifetime,45,years,ECF2010 in DIW DataDoc http://hdl.handle.net/10419/80348
+CCGT,2030,lifetime,30,years,IEA2010
+coal,2030,lifetime,40,years,IEA2010
+lignite,2030,lifetime,40,years,IEA2010
+geothermal,2030,lifetime,40,years,IEA2010
+biomass,2030,lifetime,30,years,ECF2010 in DIW DataDoc http://hdl.handle.net/10419/80348
+oil,2030,lifetime,30,years,ECF2010 in DIW DataDoc http://hdl.handle.net/10419/80348
+onwind,2030,investment,1231.9,EUR/kWel,Bolivia_specific_data for 2050 (1629.13 in 2020)
+solar,2030,investment,1051.13,EUR/kWel,Bolivia_specific_data for 2050 (1051.13 in 2020)
+biomass,2030,investment,1560.87,EUR/kWel,Bolivia_specific_data for 2050 (1716.96 in 2020)
+geothermal,2030,investment,3003.09,EUR/kWel,Bolivia_specific_data for 2050 (3772.17 in 2020)
+hydro,2030,investment,2206.3,EUR/kWel,Bolivia_specific_data for 2050 (2206.3 in 2020)
+ror,2030,investment,2000.26,EUR/kWel,Bolivia_specific_data for 2050 (2206.3 in 2020)
+OCGT,2030,investment,856,EUR/kWel,Bolivia_specific_data for 2050 (963.31 in 2020)
+nuclear,2030,investment,6000,EUR/kWel,DIW DataDoc http://hdl.handle.net/10419/80348
+CCGT,2030,investment,1139.16,EUR/kWel,Bolivia_specific_data for 2050 (1281.56 in 2020)
+oil,2030,investment,384.6,EUR/kWel,Bolivia_specific_data for 2050 (2206.3 in 2020)
+onwind,2030,FOM,1.657,%/year,Bolivia_specific_data for 2050
+solar,2030,FOM,3.129,%/year,Bolivia_specific_data for 2050
+biomass,2030,FOM,2.32,%/year,Bolivia_specific_data for 2050
+geothermal,2030,FOM,2.5,%/year,Bolivia_specific_data for 2050
+ror,2030,FOM,1,%/year,Bolivia_specific_data for 2050
+CCGT,2030,FOM,2.5,%/year,Bolivia_specific_data for 2050
+OCGT,2030,FOM,3.75,%/year,Bolivia_specific_data for 2050
+gas,2030,fuel,4.44,EUR/MWhth,Bolivia_specific_data for 2050 - Previously 14 IEA2011b
+nuclear,2030,fuel,3.9,EUR/MWhth,Changed to match EnergyScope structure / Previously 3 - IEA2011b
+biomass,2030,fuel,10.3,EUR/MWhth,Bolivia_specific_data for 2050 - Previously 7 IEA2011b
+oil,2030,fuel,124.5,EUR/MWhth,Bolivia_specific_data for 2050 / Previously 50 - IEA WEM2017 97USD/boe = http://www.iea.org/media/weowebsite/2017/WEM_Documentation_WEO2017.pdf
+hydro,2030,efficiency,0.9,per unit,Bolivia_specific_data
+ror,2030,efficiency,0.9,per unit,Bolivia_specific_data
+OCGT,2030,efficiency,0.3246,per unit,Bolivia_specific_data
+CCGT,2030,efficiency,0.4695,per unit,Bolivia_specific_data
+biomass,2030,efficiency,0.2966,per unit,Bolivia_specific_data
+gas,2030,CO2 intensity,0.202,tCO2/MWth,Bolivia_specific_data / Previously 187 - https://www.eia.gov/environment/emissions/co2_vol_mass.php
+oil,2030,efficiency,0.369,per unit,Bolivia_specific_data
+oil,2030,CO2 intensity,0.248,tCO2/MWth,Bolivia_specific_data
+geothermal,2030,CO2 intensity,0.026,tCO2/MWth,Bolivia_specific_data
+battery storage,2030,investment,192,USD/kWh,Bolivia_specific_data / Previously 192 - budischak2013
+battery storage,2030,lifetime,15,years,budischak2013
