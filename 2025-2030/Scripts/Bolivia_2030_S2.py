@@ -20,36 +20,36 @@ sys.path.append(os.path.abspath('..'))
 import dispaset as ds
 
 # Load the configuration file
-config = ds.load_config('../ConfigFiles/Config_BOLIVIA_S0_DC.xlsx')
+config = ds.load_config('../ConfigFiles/Config_BOLIVIA_2030_S2.yml')
 
 # # Limit the simulation period (for testing purposes, comment the line to run the whole year)
 # config['StartDate'] = (2030, 1, 1, 0, 0, 0)
-# config['StopDate'] = (2030, 1, 3, 0, 0, 0)
+# config['StopDate'] = (2030, 1, 31, 0, 0, 0)
 
 # Build the simulation environment:
 SimData = ds.build_simulation(config)
 
-# # Solve using GAMS:
-_ = ds.solve_GAMS(config['SimulationDirectory'], config['GAMS_folder'])
+# Solve using GAMS:
+r = ds.solve_GAMS(config['SimulationDirectory'], config['GAMS_folder'])
 
 # Load the simulation results:
-inputs,results = ds.get_sim_results(path='../Simulations/BOLIVIA_S0_DC',cache=False)
+inputs,results = ds.get_sim_results(path=config['SimulationDirectory'],cache=False)
 
 # Load the simulation results MTS:
-inputs_MTS, results_MTS = ds.get_sim_results(path='../Simulations/BOLIVIA_S0_DC', cache=False, inputs_file='Inputs_MTS.p',results_file='Results_MTS.gdx')
+inputs_MTS, results_MTS = ds.get_sim_results(path=config['SimulationDirectory'],cache=False, inputs_file='Inputs_MTS.p',results_file='Results_MTS.gdx')
 
-# # import pandas as pd
+# import pandas as pd
 import pandas as pd
 
 # Generate country-specific plots   
-# rng = pd.date_range('2030-01-01', '2030-01-07', freq='H')
-# for i in config['zones']:
-#     ds.plot_zone(inputs, results, z=i, rng=rng)
+rng = pd.date_range('2030-01-01', '2030-12-31', freq='H')
+for i in config['zones']:
+    ds.plot_zone(inputs, results, z=i, rng=rng)
 
 # Generate country-specific plots MTS    
-# rng1 = pd.date_range('2030-01-01', '2030-01-07', freq='D')
-# for j in config['zones']:
-#     ds.plot_zone(inputs_MTS, results_MTS, z=j, rng=rng1)
+rng1 = pd.date_range('2030-01-01', '2030-12-31', freq='D')
+for j in config['zones']:
+    ds.plot_zone(inputs_MTS, results_MTS, z=j, rng=rng1)
 
 # # Bar plot with the installed capacities in all countries:
 # cap = ds.plot_zone_capacities(inputs, results)
@@ -74,3 +74,9 @@ r = ds.get_result_analysis(inputs, results)
 
 # # Plot congestion in the interconnection lines on a map
 # ds.plot_line_congestion_map(inputs, results, terrain=True, margin=3, figsize=(9, 7), edge_width=3.5, bublesize=100)
+
+#%% Reserve sizing 
+
+# # Analyse the results of the dispatch and provide frequency security constraints:
+# results_frequency_response, summary_reserves, data = ds.get_frequency_stability_reserves(config['SimulationDirectory'], inputs, results)
+

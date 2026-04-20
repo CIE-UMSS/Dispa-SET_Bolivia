@@ -1,7 +1,7 @@
 Description: Bolivia configuration file for testing purposes. Four zones (CE, OR,
   NO, SU) are simulated. There is Inertia, FFR, FCR, aFRR and mFRR
 SimulationType: Standard
-SimulationDirectory: Simulations/BOLIVIA_2030_S5
+SimulationDirectory: Simulations/BOLIVIA_2030_S2
 StartDate: !!python/tuple
 - 2030
 - 1
@@ -23,12 +23,12 @@ LookAhead: 1
 AllowCurtailment: 1
 GAMS_folder: ''
 Demand: Demand/Demand_2030.csv
-RenewablesAF: RenewablesAF/RenewablesAF_2030_S5.csv
-Outages: Outages/Outages_2030_S5.csv
+RenewablesAF: RenewablesAF/RenewablesAF_2030_S2.csv
+Outages: Outages/Outages_2030_S2.csv
 ShareOfFlexibleDemand: ''
 DemandFlexibility: ''
 LoadShedding: ''
-PowerPlantData: PowerPlantData/PowerPlantData_2030_S5.csv
+PowerPlantData: PowerPlantData/PowerPlantData_2030_S2.csv
 NTC: NTC/NTC_2030.csv
 Interconnections: ''
 TransmissionGridType: DC-Power Flow

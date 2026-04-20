@@ -1,6 +1,6 @@
 Description: Bolivia configuration file for testing purposes. Four zones (CE, OR,
   NO, SU) are simulated. There is Inertia, FFR, FCR, aFRR and mFRR
-SimulationType: No clustering
+SimulationType: Standard
 SimulationDirectory: Simulations/BOLIVIA_2030_S0
 StartDate: !!python/tuple
 - 2030
@@ -34,19 +34,16 @@ Interconnections: ''
 TransmissionGridType: DC-Power Flow
 GridData: GridData/GridData_2030.csv
 GeoData: GeoCoordinates_2030.csv
-HydroScheduling: Regional
-HydroSchedulingHorizon: Annual
-InitialFinalReservoirLevel: 0
+HydroScheduling: 1
+InitialFinalReservoirLevel: 1
 ReservoirLevels: ''
-ReservoirLevelInitial: ''
-ReservoirLevelFinal: ''
 ReservoirScaledInflows: ScaledInflows/ScaledInflows_2030.csv
 StorageAlertLevels: ''
 StorageFloodControl: ''
 WaterValue: ''
 CostLoadShedding: ''
 CostCurtailment: ''
-CostOfSpillage: ''
+CostOfSpillage: Spillage_cost/Spillage_cost_2030.csv
 CostXNotServed: ''
 ValueOfLostLoad: ''
 PriceTransmission: ''
@@ -121,10 +118,10 @@ default:
   LoadShedding: 0.05
   ReservoirLevelInitial: 0.5
   ReservoirLevelFinal: 0.5
-  WaterValue: 1500
+  WaterValue: 400
   CostLoadShedding: 3000
   CostCurtailment: 0
-  CostOfSpillage: 0
+  CostOfSpillage: 401
   ValueOfLostLoad: 100000
   PriceTransmission: 0
   PriceOfGas: 12.48
